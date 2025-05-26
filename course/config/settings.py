@@ -35,20 +35,19 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles"
-    "phonenumber_field",
-    "rest_framework",
-    "rest_framework_simplejwt",
-    "drf_yasg",
-    "corsheaders",
-    "django_celery_beat",
-    "users",
-    "habits",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'phonenumber_field',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'drf_yasg',
+    'corsheaders',
+    'users',
+    'habits'
 ]
 
 MIDDLEWARE = [

@@ -1,9 +1,9 @@
 from rest_framework.generics import CreateAPIView, DestroyAPIView, ListAPIView, UpdateAPIView
 from rest_framework.permissions import AllowAny
 
-from habits.models import Habit
-from habits.paginators import HabitsPaginator
-from habits.serializers import HabitSerializer
+from .models import Habit
+from .paginators import HabitsPaginator
+from .serializers import HabitSerializer
 from users.permissions import IsOwner
 
 
