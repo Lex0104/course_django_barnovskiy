@@ -8,6 +8,7 @@ from users.models import User
 
 
 class Habit(models.Model):
+    """Модель Habit для хранения информации о привычках пользователей."""
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, verbose_name="Автор привычки", related_name="habit", null=True
     )

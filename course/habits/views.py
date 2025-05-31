@@ -11,6 +11,7 @@ class HabitCreateAPIView(CreateAPIView):
     serializer_class = HabitSerializer
 
     def perform_create(self, serializer):
+        """Переопределение метода для автоматической привязки владельца к создаваемому объекту."""
         habit = serializer.save()
         habit.user = self.request.user
         habit.periodicity_of_sending = habit.periodicity
@@ -23,6 +24,7 @@ class HabitPublishedListAPIView(ListAPIView):
     permission_classes = [AllowAny]
 
     def get_queryset(self):
+        """Возвращает объекты владельца и публичные объекты."""
         return Habit.objects.filter(published=True)
 
 
@@ -32,6 +34,7 @@ class HabitUserListAPIView(ListAPIView):
     pagination_class = HabitsPaginator
 
     def get_queryset(self):
+        """Возвращает список разрешений, требуемых для пользователей группы moderators."""
         user = self.request.user
         return Habit.objects.filter(user=user)
 

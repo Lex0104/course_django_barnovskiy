@@ -4,6 +4,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class User(AbstractUser):
+    """Модель User для хранения информации о пользователях веб-приложения."""
     username = None
 
     email = models.EmailField(unique=True, verbose_name="Email")

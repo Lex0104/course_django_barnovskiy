@@ -4,12 +4,14 @@ from rest_framework.exceptions import ValidationError
 
 
 def execution_time_validator(value):
+    """Проверка времени выполнения привычки"""
     if value:
         if value > timedelta(seconds=120):
             raise ValidationError("Продолжительность выполнения привычки не может быть более 120 секунд")
 
 
 class RelatedHabitValidator:
+    """Проверка связанной привычки и признания ее приятной"""
 
     def __init__(self, related_habit):
         self.related_habit = related_habit

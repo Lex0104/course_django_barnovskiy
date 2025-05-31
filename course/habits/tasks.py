@@ -6,6 +6,7 @@ from habits.services import send_telegram_message
 
 @shared_task
 def send_message_for_user():
+    """Функция отправки уведомления о повторении дел в Telegram."""
     habits = Habit.objects.filter(nice_habit=False)
     for habit in habits:
         habit.periodicity_of_sending -= 1
