@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
 
 from environ import Env
@@ -172,3 +173,11 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 TG_URL = "https://api.telegram.org/bot"
 TG_TOKEN = os.getenv( "TG_TOKEN" )
+
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'test_db.sqlite3',
+        }
+    }

@@ -40,10 +40,16 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
+.coverage
+.coverage.*
 .cache
 nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
+cover/
 
 # Translations
 *.mo
@@ -116,7 +122,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env.example
+.env
 .venv
 env/
 venv/
@@ -156,3 +162,7 @@ cython_debug/
 .idea/
 
 sqlite/
+
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
